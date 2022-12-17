@@ -1,16 +1,16 @@
-// console.log('welcome to my Page :-)');
-// const fs = require('fs');
+console.log('welcome to my Page :-)');
+const fs = require('fs');
 
 // creating a new file
 
-// fs.writeFileSync('read.txt', 'welcome to my page');
+fs.writeFileSync('read.txt', 'welcome to my page');
 
-// fs.writeFileSync('read.txt', 'Bhanu, welcome to my page');
+fs.writeFileSync('read.txt', 'Bhanu, welcome to my page');
 
-// fs.appendFileSync('read.txt', ' how r u i m fine');
+fs.appendFileSync('read.txt', ' how r u i m fine');
 
-// const buf_data = fs.readFileSync('read.txt');
-// console.log(buf_data);
+const buf_data = fs.readFileSync('read.txt');
+console.log(buf_data);
 
 // Node.js includes an additional data typr called Buffer
 // (Not available in browser's JavaScript)
@@ -41,17 +41,17 @@
 
 const fs = require('fs');
 
-// fs.mkdirSync('Thapa');
+fs.mkdirSync('Thapa');
 
-// fs.writeFileSync('./Thapa/bio.txt', 'this my bio page');
+fs.writeFileSync('./Thapa/bio.txt', 'this my bio page');
 
-// fs.appendFileSync('./Thapa/bio.txt', ', welcome to my page');
+fs.appendFileSync('./Thapa/bio.txt', ', welcome to my page');
 
-// const data = fs.readFileSync('./Thapa/mybio.txt', 'utf-8');
-// console.log(data);
+const data = fs.readFileSync('./Thapa/mybio.txt', 'utf-8');
+console.log(data);
 
-// fs.renameSync('./Thapa/bio.txt', './Thapa/mybio.txt');
+fs.renameSync('./Thapa/bio.txt', './Thapa/mybio.txt');
 
-// fs.unlinkSync('./Thapa/mybio.txt');
+fs.unlinkSync('./Thapa/mybio.txt');
 
-// fs.rmdirSync('Thapa');
+fs.rmdirSync('Thapa');
