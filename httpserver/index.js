@@ -11,7 +11,19 @@
 const http = require('http');
 
 const server = http.createServer((req, res) => {
-  res.end('Hello from the others sides Taddy');
+  // console.log(req.url);
+  if (req.url == '/') {
+    res.end('Hello from the others sides Taddy');
+  } else if (req.url == '/about') {
+    res.end('Hello This is About Page');
+  } else if (req.url == '/contact') {
+    // res.write('Hello This is Contact Us Page');
+    // res.end();
+    res.end('Hello This is Contact Us Page');
+  } else {
+    res.writeHead(404, { 'Content-type': 'text/html' }); //status code
+    res.end("404 error, Page doesn't exitst");
+  }
 });
 
 server.listen('8000', '127.0.0.1', () => {
