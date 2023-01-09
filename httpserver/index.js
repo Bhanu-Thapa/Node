@@ -8,9 +8,17 @@
 // If the response from the HTTP server is supposed to be displayes as HTML,
 // You should include an HTTP header with the correct content type:
 
+const fs = require('fs');
+
 const http = require('http');
+const { type } = require('os');
 
 const server = http.createServer((req, res) => {
+  const data = fs.readFileSync(`${__dirname}/UserApi/userapi.json`, 'utf-8');
+  // console.log(data);
+  // res.end(data);
+  const objData = JSON.parse(data);
+
   // console.log(req.url);
   if (req.url == '/') {
     res.end('Hello from the others sides Taddy');
@@ -20,9 +28,13 @@ const server = http.createServer((req, res) => {
     // res.write('Hello This is Contact Us Page');
     // res.end();
     res.end('Hello This is Contact Us Page');
+  } else if (req.url == '/userapi') {
+    // API
+    res.writeHead(200, { 'content-type': 'application/json' });
+    res.end(objData[2].name);
   } else {
     res.writeHead(404, { 'Content-type': 'text/html' }); //status code
-    res.end("404 error, Page doesn't exitst");
+    res.end("<h1>404 error, Page doesn't exitst</h1>");
   }
 });
 
