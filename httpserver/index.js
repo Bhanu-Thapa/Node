@@ -21,7 +21,7 @@ const server = http.createServer((req, res) => {
 
   // console.log(req.url);
   if (req.url == '/') {
-    res.end('Hello from the others sides Taddy');
+    rse.end('Hello from the others sides Taddy');
   } else if (req.url == '/about') {
     res.end('Hello This is About Page');
   } else if (req.url == '/contact') {
